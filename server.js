@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3000;
 const APP_URL = (process.env.APP_URL || `http://localhost:${PORT}`).replace(/\/$/, "");
 const SECRET = process.env.SESSION_SECRET || "troque-este-segredo";
 const ADMIN_USER = process.env.ADMIN_USER || "admin";
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "admin";
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "";
 
 const app = express();
 app.set("trust proxy", true);
@@ -34,6 +34,7 @@ const igual = (a, b) => { const x = Buffer.from(String(a)), y = Buffer.from(Stri
 
 app.post("/api/login", (req, res) => {
   const { usuario, senha } = req.body || {};
+  if (!ADMIN_PASSWORD) return res.status(503).json({ erro: "Defina a variável ADMIN_PASSWORD no servidor para liberar o login." });
   if (!igual(usuario || "", ADMIN_USER) || !igual(senha || "", ADMIN_PASSWORD)) return res.status(401).json({ erro: "Usuário ou senha inválidos" });
   const v = Buffer.from(`${usuario}|${Date.now() + 7 * 864e5}`).toString("base64url");
   const secure = APP_URL.startsWith("https") ? "; Secure" : "";
