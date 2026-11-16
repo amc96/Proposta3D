@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Proposta Comercial</title>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#e3e8eb;--paper:#fff;--ink:#16232b;--mute:#5d6f79;--line:#d5dde1;--soft:#eef2f4;--brand:#0d3442;--light:#14c8dc;--ok:#1a9d5c;--no:#c0392b}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "Hanken Grotesk",system-ui,sans-serif;overflow-x:clip}
+.wrap{display:grid;grid-template-columns:270px minmax(0,820px);gap:32px;justify-content:center;padding:24px 16px 60px}
+aside{position:sticky;top:20px;align-self:start;display:grid;gap:14px}
+aside h1{font-weight:500;font-size:28px;line-height:1.1;margin:0 0 6px}
+.who{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;font-size:15px;margin:0}.who dt{color:var(--mute)}.who dd{margin:0;font-weight:600}
+.btn{min-height:48px;border:1px solid var(--line);background:var(--soft);color:var(--ink);font:inherit;font-size:16px;border-radius:6px;cursor:pointer;padding:10px 14px;display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;width:100%}
+.btn:hover{filter:brightness(.96)}.btn:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--light);outline-offset:2px}
+.btn.go{background:var(--light);border-color:var(--light);color:#04232b;font-weight:700}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.status{border-radius:6px;padding:12px 14px;font-size:15px}.status.ok{background:#dcf3e6;border:1px solid var(--ok)}.status.no{background:#fbe2df;border:1px solid var(--no)}.status.exp{background:#eee;border:1px solid #bbb}
+.chat{display:none;gap:8px;background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:10px}.chat.on{display:grid}
+.ms{display:grid;gap:6px;max-height:260px;overflow:auto}.m{background:var(--soft);border-radius:8px;padding:6px 10px;font-size:14px}.m.empresa{background:#e0f1f8}.m small{display:block;color:var(--mute);font-size:12px}
+textarea,input{width:100%;font:inherit;font-size:16px;padding:10px;border:1px solid var(--line);border-radius:6px;background:#fff;color:var(--ink)}
+.hint{font-size:13px;color:var(--mute);margin:0}
+.sheet{background:var(--paper);box-shadow:0 1px 3px rgba(0,0,0,.12);margin-bottom:24px;overflow:hidden}
+.cover{background:radial-gradient(120% 90% at 80% 10%,color-mix(in srgb,var(--brand) 60%,#fff 18%) 0,var(--brand) 55%,color-mix(in srgb,var(--brand) 70%,#000) 100%);color:#fff;aspect-ratio:1/1.1;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(24px,6vw,56px)}
+.cover svg{position:absolute;inset:0;width:100%;height:100%}
+.cover .t{position:relative}.cover small{font-size:15px;opacity:.85}
+.cover h2{font-size:clamp(32px,7vw,54px);line-height:1.04;margin:6px 0 10px;font-weight:800;text-wrap:balance}
+.cover p{margin:0;font-size:17px;opacity:.9}
+.clogo{position:absolute;top:clamp(20px,5vw,44px);left:clamp(24px,6vw,56px);font-weight:800;font-size:26px}
+.clogo img{max-height:64px;max-width:220px;background:#fff;border-radius:8px;padding:8px}
+.about{padding:clamp(24px,6vw,56px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:32px}
+.about h3{font-size:32px;line-height:1.05;margin:0}
+.about ul{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:12px}
+.about li{border-left:3px solid var(--light);padding:4px 0 4px 14px}.about li strong{display:block}
+.doc{padding:clamp(18px,5vw,44px)}
+.head{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;margin-bottom:26px}
+.mark{background:var(--brand);color:#fff;font-weight:800;font-size:22px;padding:20px 24px;border-radius:4px;max-width:240px}.mark img{max-width:190px;max-height:80px;display:block;background:#fff;padding:6px;border-radius:4px}
+.co{font-size:14px;line-height:1.6}
+.bar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;border-top:5px solid var(--brand);background:var(--soft)}
+.bar span:first-child{background:var(--brand);color:#fff;font-weight:700;padding:6px 16px;font-size:17px}.bar span:last-child{color:var(--mute);padding:6px 10px;font-size:17px}
+.cli{margin:14px 0;font-size:15px;line-height:1.7}.cli strong{color:var(--brand);font-size:16px}
+h4{color:var(--brand);font-size:19px;margin:20px 0 10px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{background:var(--soft);text-align:left;padding:10px 8px;border-bottom:2px solid var(--brand);font-weight:700}
+td{padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}.n{text-align:right;white-space:nowrap}
+.tag{display:inline-block;font-size:12px;padding:1px 7px;border-radius:10px;background:var(--soft);border:1px solid var(--line);margin-top:3px}
+.tot{background:var(--soft);padding:10px 14px;display:grid;gap:4px;margin-top:-1px}
+.tot div{display:flex;justify-content:flex-end;gap:22px}.tot div span:last-child{min-width:120px;text-align:right;white-space:nowrap}.tot .big{font-size:19px;font-weight:800}
+.box{margin-top:16px;background:var(--soft)}.box h5{margin:0;padding:8px 12px 6px;border-bottom:2px solid var(--brand);font-size:16px;color:var(--brand)}.box p{margin:0;padding:8px 12px 10px;font-size:15px;white-space:pre-line}
+.sign{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:56px;font-size:14px;text-align:center}.sign div{border-top:1px solid var(--ink);padding-top:6px}
+.aceite{margin-top:24px;font-size:14px;padding:10px 14px;border:1px dashed var(--ok);color:#11703f}
+dialog{border:0;border-radius:10px;padding:24px;max-width:420px;width:calc(100% - 32px);box-shadow:0 20px 60px rgba(0,0,0,.35)}
+dialog::backdrop{background:rgba(5,20,26,.55)}dialog h3{margin:0 0 8px;font-size:22px}dialog label{display:block;font-size:14px;margin:12px 0 4px}
+#err{color:var(--no);font-size:14px;min-height:18px}
+.full{padding:80px 20px;text-align:center;color:var(--mute)}
+@keyframes pulse{0%,100%{opacity:.25}50%{opacity:1}}.pulse{animation:pulse 3.2s ease-in-out infinite}
+@media(prefers-reduced-motion:reduce){.pulse{animation:none;opacity:.8}}
+@media(max-width:860px){.wrap{grid-template-columns:minmax(0,1fr)}aside{position:static}}
+@media(max-width:600px){.about{grid-template-columns:1fr}.head{grid-template-columns:1fr;gap:12px}.mark{justify-self:start}
+  .stack thead{display:none}.stack tr{display:grid;padding-block:8px;border-bottom:1px solid var(--line)}
+  .stack td{display:flex;justify-content:space-between;gap:12px;border:0;padding:3px 4px;text-align:right}.stack td::before{content:attr(data-l);color:var(--mute);text-align:left}.sign{grid-template-columns:1fr;gap:36px}}
+@media print{body{background:#fff}aside{display:none}.wrap{display:block;padding:0}.sheet{box-shadow:none;margin:0;page-break-after:always}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<div id="app"><p class="full">Carregando proposta…</p></div>
+<dialog id="dlg"><form id="dlgForm">
+  <h3 id="dTitle"></h3><p class="hint" id="dText" style="font-size:15px"></p>
+  <label for="dName">Seu nome completo</label><input id="dName" required autocomplete="name">
+  <div id="motivoWrap"><label for="dMotivo">Motivo (opcional)</label><textarea id="dMotivo" rows="2"></textarea></div>
+  <p id="err"></p>
+  <div class="row2" style="margin-top:8px"><button class="btn" type="button" id="dCancel">Cancelar</button><button class="btn go" type="submit" id="dOk">Confirmar</button></div>
+</form></dialog>
+<script>
+{
+const token = location.pathname.split("/").pop();
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const brl = v => Number(v||0).toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+const dataHora = d => new Date(d).toLocaleString("pt-BR",{dateStyle:"short",timeStyle:"short"});
+let P, modo = "";
+
+async function api(method, url, body){
+  const r = await fetch(url,{method,headers:body?{"Content-Type":"application/json"}:{},body:body?JSON.stringify(body):undefined});
+  const j = await r.json().catch(()=>({})); if(!r.ok) throw new Error(j.erro||"Erro "+r.status); return j;
+}
+
+function render(){
+  const E = P.empresa, C = P.cliente || {}, nomeE = E.fantasia || E.nome;
+  document.documentElement.style.setProperty("--brand", E.cor_primaria || "#0d3442");
+  document.documentElement.style.setProperty("--light", E.cor_destaque || "#14c8dc");
+  document.title = `Proposta ${P.numero} – ${nomeE}`;
+  const data = new Date(String(P.data).slice(0,10)+"T12:00:00");
+  const dataLonga = data.toLocaleDateString("pt-BR",{day:"numeric",month:"long",year:"numeric"});
+  const validade = new Date(data.getTime()+P.validade_dias*864e5).toLocaleDateString("pt-BR");
+  let mensal=0, unico=0, bruto=0;
+  const linhas = P.itens.map((it,i)=>{ const b=it.qtd*it.unit, t=b*(1-it.desconto_pct/100); bruto+=b; it.tipo==="mensal"?mensal+=t:unico+=t;
+    return `<tr><td data-l="Item">${i+1}</td><td data-l="Cód.">${esc(it.codigo||"")}</td><td data-l="Descrição">${esc(it.descricao)}<br><span class="tag">${it.tipo==="mensal"?"Mensal":"Pagamento único"}</span></td>
+    <td class="n" data-l="Qtde.">${Number(it.qtd).toLocaleString("pt-BR")}</td><td class="n" data-l="Valor unit.">${brl(it.unit)}</td><td class="n" data-l="Desc.">${Number(it.desconto_pct).toLocaleString("pt-BR")}%</td><td class="n" data-l="Total">${brl(t)}</td></tr>`; }).join("");
+  const frete = Number(P.frete)||0, desc = bruto-unico-mensal;
+  const resp = ["aceita","recusada"].includes(P.status);
+  let fibras=""; for(let i=0;i<9;i++){const y=520+i*26,c=300+i*8; fibras+=`<path d="M-20 ${y} C 200 ${y-40}, ${c} ${420+i*6}, 650 520" stroke="url(#g)" stroke-width="${i%3?1.5:3}" opacity="${.35+i*.07}"/>`;}
+  const marca = E.logo ? `<img src="${esc(E.logo)}" alt="${esc(nomeE)}">` : esc(nomeE);
+
+  $("app").innerHTML = `<div class="wrap">
+  <aside>
+    <div><h1>Proposta Comercial</h1><dl class="who"><dt>DE:</dt><dd>${esc(P.vendedor || nomeE)}</dd><dt>PARA:</dt><dd>${esc(C.nome||"")}</dd></dl></div>
+    <button class="btn" id="bMsg" type="button">💬 Mensagens (${P.mensagens.length})</button>
+    <div class="chat" id="chat"><div class="ms" id="ms"></div>
+      <input id="mNome" placeholder="Seu nome" autocomplete="name"><textarea id="mTxt" rows="3" placeholder="Escreva sua dúvida sobre a proposta"></textarea>
+      <button class="btn go" id="mSend" type="button">Enviar mensagem</button><p class="hint" id="mErr"></p></div>
+    ${resp ? `<div class="status ${P.status==="aceita"?"ok":"no"}"><strong>Proposta ${P.status}</strong><br>${esc(P.resposta_nome)} · ${dataHora(P.resposta_em)}</div>`
+      : P.expirada ? `<div class="status exp"><strong>Proposta expirada</strong><br>Válida até ${validade}. Fale com a ${esc(nomeE)} para receber uma atualizada.</div>`
+      : `<div class="row2"><button class="btn go" id="bAcc" type="button">Aceitar</button><button class="btn" id="bRec" type="button">Recusar</button></div>`}
+    <button class="btn" id="bPdf" type="button">⬇ Download em PDF</button>
+    ${E.whatsapp ? `<a class="btn" target="_blank" rel="noopener" href="https://wa.me/${esc(String(E.whatsapp).replace(/\D/g,""))}?text=${encodeURIComponent(`Olá! Tenho uma dúvida sobre a proposta nº ${P.numero}.`)}">Falar no WhatsApp</a>` : ""}
+  </aside>
+  <main>
+    <section class="sheet cover" aria-label="Capa">
+      <svg viewBox="0 0 800 880" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="var(--light)" stop-opacity="0"/><stop offset="1" stop-color="var(--light)"/></linearGradient></defs>
+        <g fill="none" stroke-linecap="round">${fibras}</g>
+        <g transform="translate(560 300)"><path d="M0 120 L90 40 L180 120 Z" fill="rgba(0,0,0,.35)"/><rect x="18" y="118" width="144" height="120" fill="rgba(0,0,0,.25)"/>
+          <rect x="72" y="170" width="38" height="68" fill="rgba(0,0,0,.4)"/><rect x="34" y="140" width="30" height="26" fill="var(--light)" class="pulse"/><rect x="118" y="140" width="30" height="26" fill="var(--light)" class="pulse" style="animation-delay:.8s"/></g>
+      </svg>
+      <div class="clogo">${marca}</div>
+      <div class="t"><small>Proposta nº ${P.numero} · ${esc(C.nome||"")}</small><h2>${esc(P.titulo||"Proposta comercial")}</h2><p>${esc(P.subtitulo||"")}</p></div>
+    </section>
+    ${E.missao || (E.destaques||[]).length ? `<section class="sheet about" aria-label="Apresentação">
+      <div><p class="hint" style="margin:0 0 6px">Sobre a ${esc(nomeE)}</p><h3>${esc(nomeE)}</h3></div>
+      <div><p style="margin:0">${esc(E.missao||"")}</p><ul>${(E.destaques||[]).map(([t,d])=>`<li><strong>${esc(t)}</strong>${esc(d)}</li>`).join("")}</ul></div></section>` : ""}
+    <section class="sheet doc" aria-label="Orçamento">
+      <div class="head"><div class="mark">${marca}</div>
+        <div class="co"><strong>${esc(E.nome)}</strong><br>${E.cnpj?`<strong>CNPJ:</strong> ${esc(E.cnpj)}<br>`:""}${E.telefone?`Telefone: ${esc(E.telefone)}<br>`:""}${E.email?`${esc(E.email)}<br>`:""}${esc(E.endereco||"")}${E.responsavel?`<br>Responsável: ${esc(E.responsavel)}`:""}</div></div>
+      <div class="bar"><span>${dataLonga}</span><span>Proposta nº ${P.numero}</span></div>
+      <div class="cli"><strong>${esc(C.nome||"")}</strong><br>${C.documento?esc(C.documento)+"<br>":""}${esc([C.endereco,C.cidade,C.uf,C.cep].filter(Boolean).join(", "))}
+        ${C.contato||C.email?`<br>${C.contato?"A/C: "+esc(C.contato)+" &nbsp; ":""}${C.email?"E-mail: "+esc(C.email):""}`:""}<br>Proposta válida por ${P.validade_dias} dias (até ${validade}).</div>
+      <h4>Seguem condições da proposta comercial:</h4>
+      <table class="stack"><thead><tr><th>Item</th><th>Cód.</th><th>Descrição</th><th class="n">Qtde.</th><th class="n">Valor unit.</th><th class="n">Desc.</th><th class="n">Total</th></tr></thead><tbody>${linhas}</tbody></table>
+      <div class="tot"><div><span>Subtotal</span><span>${brl(bruto)}</span></div>${desc>0.004?`<div><span>Descontos</span><span>− ${brl(desc)}</span></div>`:""}
+        ${frete?`<div><span>Frete / deslocamento</span><span>${brl(frete)}</span></div>`:""}
+        ${unico+frete?`<div class="${mensal?"":"big"}"><span>Total${mensal?" pagamento único":""}</span><span>${brl(unico+frete)}</span></div>`:""}
+        ${mensal?`<div class="big"><span>Mensalidade</span><span>${brl(mensal)}/mês</span></div>`:""}</div>
+      ${(P.condicoes||[]).map(([t,d])=>`<div class="box"><h5>${esc(t)}</h5><p>${esc(d)}</p></div>`).join("")}
+      ${P.status==="aceita"?`<div class="aceite">Aceita eletronicamente por <b>${esc(P.resposta_nome)}</b> em ${dataHora(P.resposta_em)}.</div>`:""}
+      <div class="sign"><div>${esc(E.nome)}</div><div>${esc(C.nome||"")}</div></div>
+    </section>
+  </main></div>`;
+
+  const ms = () => { $("ms").innerHTML = P.mensagens.map(m=>`<div class="m ${m.autor}"><small>${esc(m.nome)} · ${dataHora(m.created_at)}</small>${esc(m.texto)}</div>`).join("") || `<p class="hint">Nenhuma mensagem ainda.</p>`; $("ms").scrollTop=1e6; };
+  ms();
+  $("bMsg").onclick = () => $("chat").classList.toggle("on");
+  $("mNome").value = localStorage.getItem("nome") || C.contato || "";
+  $("mSend").onclick = async () => { try{ const t=$("mTxt").value.trim(); if(!t) return;
+    P.mensagens = await api("POST",`/api/public/${token}/mensagens`,{nome:$("mNome").value||C.nome,texto:t}); $("mTxt").value=""; try{localStorage.setItem("nome",$("mNome").value)}catch(e){}
+    ms(); $("bMsg").textContent=`💬 Mensagens (${P.mensagens.length})`; $("mErr").textContent="Mensagem enviada."; }catch(e){ $("mErr").textContent=e.message; } };
+  $("bPdf").onclick = () => window.print();
+  if($("bAcc")){ $("bAcc").onclick=()=>abrir("aceita",mensal,unico+frete); $("bRec").onclick=()=>abrir("recusada"); }
+}
+
+function abrir(m, mensal, unico){
+  modo=m; const ok=m==="aceita";
+  $("dTitle").textContent = ok?"Aceitar proposta":"Recusar proposta";
+  $("dText").textContent = ok?`Você confirma o aceite da proposta nº ${P.numero}${mensal?`, com mensalidade de ${brl(mensal)}`:""}${unico?`${mensal?" e":", no valor de"} ${brl(unico)} em pagamento único`:""}?`:"Conte o motivo, se quiser — isso ajuda a melhorar a oferta.";
+  $("motivoWrap").style.display = ok?"none":""; $("dOk").textContent = ok?"Confirmar aceite":"Confirmar recusa"; $("err").textContent="";
+  $("dlg").showModal(); $("dName").focus();
+}
+$("dCancel").onclick = () => $("dlg").close();
+$("dlgForm").addEventListener("submit", async e => { e.preventDefault();
+  try{ P = await api("POST",`/api/public/${token}/responder`,{acao:modo,nome:$("dName").value.trim(),motivo:$("dMotivo").value.trim()}); $("dlg").close(); render(); }
+  catch(err){ $("err").textContent = err.message; } });
+
+api("GET","/api/public/"+token).then(p=>{P=p;render();}).catch(e=>{ $("app").innerHTML=`<p class="full">${esc(e.message)}</p>`; });
+}
+</script>
+</body>
+</html>

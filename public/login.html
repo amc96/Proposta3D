@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Entrar · Propostas</title>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/app.css">
+<style>
+body{display:grid;place-items:center;min-height:100vh;background:radial-gradient(120% 90% at 80% 10%,#1d6d85 0,#0d3442 55%,#081f28 100%)}
+form{width:min(360px,92vw);display:grid;gap:12px}
+.brand{color:#fff;font-weight:800;font-size:26px;text-align:center;margin-bottom:6px}.brand b{background:#14c8dc;color:#04232b;border-radius:6px;padding:0 8px}
+#erro{color:#c0392b;font-size:14px;min-height:20px;margin:0}
+</style>
+</head>
+<body>
+<div>
+  <div class="brand">Propostas <b>3D</b></div>
+  <form class="card" id="f">
+    <div><label for="u">Usuário</label><input id="u" autocomplete="username" required></div>
+    <div><label for="s">Senha</label><input id="s" type="password" autocomplete="current-password" required></div>
+    <button class="btn pri" type="submit" style="justify-content:center">Entrar</button>
+    <p id="erro"></p>
+  </form>
+</div>
+<script>
+document.getElementById("f").addEventListener("submit", async e => {
+  e.preventDefault();
+  const r = await fetch("/api/login", {method:"POST", headers:{"Content-Type":"application/json"},
+    body: JSON.stringify({usuario: u.value, senha: s.value})});
+  if (r.ok) location.href = "/app"; else document.getElementById("erro").textContent = (await r.json()).erro || "Falha ao entrar";
+});
+</script>
+</body>
+</html>

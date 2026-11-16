@@ -1,0 +1,17 @@
+{
+  "name": "propostas-3d",
+  "version": "1.0.0",
+  "description": "Sistema de propostas comerciais multiempresa com integração Bling",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "pg": "^8.13.1"
+  }
+}

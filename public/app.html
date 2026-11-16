@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Propostas · Painel</title>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/app.css">
+</head>
+<body>
+<div class="shell">
+  <nav class="side">
+    <div class="brand">Propostas <b>3D</b></div>
+    <a href="#/" data-r="painel">Painel</a>
+    <a href="#/propostas" data-r="propostas">Propostas <span class="pill" id="navMsgs" hidden></span></a>
+    <a href="#/clientes" data-r="clientes">Clientes</a>
+    <a href="#/produtos" data-r="produtos">Produtos</a>
+    <a href="#/empresas" data-r="empresas">Empresas</a>
+    <div class="sp"></div>
+    <button type="button" id="sair">Sair</button>
+  </nav>
+  <main id="view"></main>
+</div>
+<dialog id="dlg"></dialog>
+<div id="toast" role="status"></div>
+<script src="/assets/app.js"></script>
+</body>
+</html>
